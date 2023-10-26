@@ -18,12 +18,12 @@ const NewBoxForm = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBox(formData.width, formData.height, formData.color);
+    addBox({...formData});
     setFormData(initialState);
   }
 
   return (
-    <form>
+    <form onSubmit = {handleSubmit}>
       <label htmlFor="width">Width:</label>
       <input
         id="width"

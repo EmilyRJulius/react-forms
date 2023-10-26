@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {v4 as uuid } from 'uuid'
 import NewBoxForm from "./NewBoxForm";
 import Box from "./Box";
 
@@ -11,15 +12,17 @@ const BoxList = () => {
     },
   ];
   const [boxes, setBoxes] = useState(initialState);
-  const addBox = (width, height, color) => {
-    setBoxes(boxes => [...boxes, {width, height, color}])
-  }
+  const addBox = (newBox) => {
+    setBoxes((boxes) => [...boxes, {...newBox, id: uuid() }]);
+  };
   return (
     <div>
-      <NewBoxForm addBox = {addBox}/>
+      <NewBoxForm addBox={addBox} />
       <div>
         {boxes.map((box) => (
-          <Box width={width} height={height} color={color} />
+          <Box
+          //   width={width} height={height} color={color}
+          />
         ))}
       </div>
     </div>
