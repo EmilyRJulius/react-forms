@@ -4,7 +4,7 @@ const Box = ({ width, height, color }) => {
   const boxStyle = {
     width: width,
     height: height,
-    color: color,
+    backgroundColor: color,
   };
   return <div style={boxStyle}></div>;
 };

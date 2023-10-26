@@ -21,7 +21,7 @@ const BoxList = () => {
       <div>
         {boxes.map((box) => (
           <Box
-          //   width={width} height={height} color={color}
+            width={width} height={height} color={color}
           />
         ))}
       </div>
