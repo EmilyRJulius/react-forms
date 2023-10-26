@@ -25,3 +25,5 @@ const BoxList = () => {
     </div>
   );
 };
+
+export default BoxList;
