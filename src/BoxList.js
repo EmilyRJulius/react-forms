@@ -5,18 +5,21 @@ import Box from "./Box";
 const BoxList = () => {
   const initialState = [
     {
-      height: "",
       width: "",
+      heigth: "",
       color: "",
     },
   ];
   const [boxes, setBoxes] = useState(initialState);
+  const addBox = (width, height, color) => {
+    setBoxes(boxes => [...boxes, {width, height, color}])
+  }
   return (
     <div>
-      <NewBoxForm />
+      <NewBoxForm addBox = {addBox}/>
       <div>
         {boxes.map((box) => (
-          <Box height={height} width={width} color={color} />
+          <Box width={width} height={height} color={color} />
         ))}
       </div>
     </div>

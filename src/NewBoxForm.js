@@ -18,7 +18,8 @@ const NewBoxForm = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    addBox(formData.width, formData.height, formData.color);
+    setFormData(initialState);
   }
 
   return (
