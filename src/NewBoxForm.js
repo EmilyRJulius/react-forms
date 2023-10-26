@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const NewBoxForm = () => {
-    const initialState = {
-        width: "",
-        height: "",
-        color: "",
-      }
+  const initialState = {
+    width: "",
+    height: "",
+    color: "",
+  };
   const [formData, setFormData] = useState(initialState);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((formData) => ({
@@ -15,15 +15,15 @@ const NewBoxForm = () => {
       [name]: value,
     }));
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBox({...formData});
+    addBox({ ...formData });
     setFormData(initialState);
-  }
+  };
 
   return (
-    <form onSubmit = {handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="width">Width:</label>
       <input
         id="width"
